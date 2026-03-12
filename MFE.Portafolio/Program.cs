@@ -30,9 +30,9 @@ app.UseAuthorization();
 app.UseStaticFiles();
 app.UseAntiforgery();
 
+app.MapHealthChecks("/health");
+
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
-
-app.MapHealthChecks("/health");
 
 app.Run();
